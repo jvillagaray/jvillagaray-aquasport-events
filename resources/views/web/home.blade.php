@@ -69,8 +69,7 @@
     </style>
 </head>
 
-<body
-    class="bg-background-dark text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+<body class="bg-background-dark text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-white">
     <nav class="sticky top-0 z-50 w-full border-b border-surface-border bg-background-dark/80 backdrop-blur-md">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-20 items-center justify-between">
@@ -86,11 +85,13 @@
                     <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
                         href="#experience">La experiencia</a>
                     <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-                        href="#categories">Distancia</a>
+                        href="#distances">Distancia</a>
                     <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-                        href="#location">Precios</a>
+                        href="#prices">Precios</a>
                     <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
-                        href="#schedule">Kit</a>
+                        href="#schedule">Programa</a>
+                    <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                        href="#kit">Kit</a>
                     
                     <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#faq">FAQ</a>
                 </div>
@@ -103,7 +104,7 @@
             </div>
         </div>
     </nav>
-    <!-- <iframe width="1455" height="818" src="https://www.youtube.com/embed/XvgoMsfKgkc" title="La hermosa Laguna de Paca |Landscapes| 4k drone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+    
     <section class="relative flex min-h-[90vh] w-full flex-col justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 overflow-hidden">
             
@@ -127,7 +128,8 @@
                     6 Junio, 2026 • La Náutica – Laguna de Paca, Jauja, Perú
                 </div>
                 <h1 class="mb-8 text-5xl font-black leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl">
-                    Solo los que creen en la leyenda llegan a la meta <br />
+                    La Leyenda de Paca no se cuenta…<br />
+                    SE NADA
                     <!-- <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Solo quienes creen en la leyenda cruzan la meta.
                     </span> -->
                 </h1>                
@@ -174,8 +176,8 @@
                     </div>
                 </div>
                 <p class="mb-10 max-w-xl text-lg text-gray-300 sm:text-xl">
-                    La Copa Paca te espera en la Laguna de Paca a 3,418 msnm.
-                    Un desafío de aguas abiertas solo para quienes se atreven a escribir la leyenda.
+                    No todos nadan en Paca…
+                    solo aquellos que quieren ser parte de la leyenda
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <button class="group relative flex h-12 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-primary px-6 text-base font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:bg-orange-600 hover:scale-105">
@@ -195,6 +197,7 @@
             <span class="material-symbols-outlined text-4xl">keyboard_arrow_down</span>
         </div>
     </section>
+
     <div class="border-y border-surface-border bg-surface-dark/30 py-8">
         <div class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 px-4 text-center sm:flex-row sm:justify-between sm:px-6 lg:px-8">
             <span class="text-sm font-semibold uppercase tracking-wider text-text-dim">Organizador del Evento</span>
@@ -208,6 +211,7 @@
             <div class="hidden sm:block w-32"></div>
         </div>
     </div>
+
     <section class="py-24 bg-background-dark relative overflow-hidden" id="experience">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 h-[500px] w-[500px] rounded-full bg-secondary/5 blur-[100px]">
         </div>
@@ -269,7 +273,8 @@
             </div>
         </div>
     </section>
-    <section class="py-24 bg-surface-dark/20" id="categories">
+
+    <section class="py-24 bg-surface-dark/20" id="distances">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mb-16 md:text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Elige tu Distancia</h2>
@@ -380,7 +385,7 @@
                             <img alt="Stylized dark map view of a lake area"
                                 class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
                                 data-location="Distancia 1.5K"
-                                src="{{ asset('assets/web/images/1.5k.png') }}" />                                                        
+                                src="{{ asset('assets/web/images/1.5k.jpg') }}" />                                                        
                         </div>
 
                     </div>
@@ -389,7 +394,7 @@
                             <img alt="Stylized dark map view of a lake area"
                                 class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
                                 data-location="Distancia 3K"
-                                src="{{ asset('assets/web/images/3k.png') }}" />                                                        
+                                src="{{ asset('assets/web/images/3k.jpg') }}" />                                                        
                         </div>
 
                     </div>
@@ -398,210 +403,211 @@
                             <img alt="Stylized dark map view of a lake area"
                                 class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
                                 data-location="Distancia 6K"
-                                src="{{ asset('assets/web/images/6k.png') }}" />                                                        
+                                src="{{ asset('assets/web/images/6k.jpg') }}" />                                                        
                         </div>
 
                     </div>                
             </div>
-            
-            <div class="mt-24 pt-12 border-t border-surface-border/30 relative max-w-5xl mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h3 class="text-4xl font-bold text-white">Precios</h3>
-                    <p class="mt-4 text-lg text-text-dim">La inscripción se realizará en 3 fases y hasta completar el <b>cupón límite de inscripción</b></p>
-                </div>
-                <div class="relative">
-                    <div class="hidden md:block absolute top-[14px] left-[16%] right-[16%] h-0.5 bg-surface-border z-0">
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="relative flex flex-col items-center group">
-                            <div
-                                class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-secondary border-4 border-background-dark z-10 mb-8 shadow-[0_0_15px_rgba(6,182,212,0.6)]">
-                            </div>
-                            <div
-                                class="w-full rounded-xl border-primary/50 bg-background-dark border  p-6 relative  transition-all shadow-lg shadow-[0_0_40px_rgba(249,115,22,0.1)] ">
-                                <!-- relative flex flex-col rounded-2xl border border-primary/50 bg-background-dark p-8 shadow-[0_0_40px_rgba(249,115,22,0.1)] transform md:-translate-y-4 md:scale-105 z-10 -->
-                                <div
-                                    class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-secondary text-background-dark text-xs font-black uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                    del 7 de febrero al 21 de marzo
-                                </div>
-                                <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 1</h4>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
-                                        <span class="text-white font-bold text-lg">1.5 Kilómentros</span>
-                                        <span class="text-white text-lg font-bold">S/ 150.00</span>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
-                                        <span class="text-white font-bold text-lg">3 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 200.00</span>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm">
-                                        <span class="text-white font-bold text-lg">6 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 250.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="relative flex flex-col items-center group opacity-60  transition-opacity">
-                            <div
-                                class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-surface-border border-4 border-background-dark z-10 mb-8">
-                            </div>
-                            <div
-                                class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
-                                <div
-                                    class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                    del 22 de marzo al 25 de abril
-                                </div>
-                                <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 2</h4>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
-                                        <span class="text-gray-400 text-lg">1.5 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 180.00</span>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
-                                        <span class="text-gray-400 text-lg">3 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 230.00</span>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm">
-                                        <span class="text-gray-400 text-lg">6 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 280.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="relative flex flex-col items-center group opacity-60  transition-opacity">
-                            <div
-                                class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-surface-border border-4 border-background-dark z-10 mb-8">
-                            </div>
-                            <div
-                                class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
-                                <div
-                                    class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                    del 26 de abril al 24 de mayo
-                                </div>
-                                <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 3</h4>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
-                                        <span class="text-gray-400 text-lg">1.5 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 210.00</span>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
-                                        <span class="text-gray-400 text-lg">3 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 260.00</span>
-                                    </div>
-                                    <div class="flex justify-between items-center text-sm">
-                                        <span class="text-gray-400  text-lg">6 Kilómentros</span>
-                                        <span class="text-white font-bold text-lg">S/ 310.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>            
-            <div class="mt-24 pt-16 border-t border-surface-border/30 max-w-7xl mx-auto px-4">
-                <div class="mb-12 text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Cómo inscribirme?</h2>
-                    <p class="mt-4 text-lg text-text-dim">Las inscripciones van del 20 de marzo al 29 de mayo de 2026. <br>Para inscribirte puedes hacerlo de la siguiente manera</p>
-                </div>
-                <div class="grid gap-6 md:grid-cols-3">
-                    
-                     <!-- Step 1: Banl Details -->
-                    <div class="flex flex-col rounded-2xl border border-surface-border bg-surface-dark/40 p-8 backdrop-blur-md">
-                        <div
-                            class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/20 text-secondary font-black text-xl border border-secondary/30">
-                            1
-                        </div>
-                        <h3 class="mb-4 text-xl font-bold text-white">Realizar el pago</h3>
-                        <p class="text-sm leading-relaxed text-text-dim">
-                           <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Depositar a el N° cuenta a nombre de:
-                        </p>
-                        <p class="mt-3 text-sm  leading-relaxed text-white">Asociación Club Deportivo Cultural Aqua Sport
-                        </p>                        
-                        <div class="flex items-center gap-4 mt-4">
-                            <img class="img-fluid border-surface-border/30 rounded-lg"  src="{{ asset('assets/web/images/bcp.webp') }}" width="80" alt="">
-                            <div>
-                                <p class="text-sm  text-text-dim">N° de cuenta</p>
-                                <p class="text-sm font-bold tracking-widest text-white">193-2671168-0-93</p> 
-                                <p class="mt-2 text-sm text-text-dim">N° de cuenta interbancaria</p>
-                                <p class="text-sm font-bold tracking-widest text-white">002-19300267116809319</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 mt-4">
-                            <img class="img-fluid border-surface-border/30 rounded-lg" src="{{ asset('assets/web/images/bbva.webp') }}" width="80" alt="">
-                            <div>
-                                <p class="text-sm  text-text-dim">N° de cuenta</p>
-                                <p class="text-sm font-bold tracking-widest text-white">0011 0284 0100033580</p> 
-                                <p class="mt-2 text-sm text-text-dim">N° de cuenta interbancaria</p>
-                                <p class="text-sm font-bold tracking-widest text-white">011 284 000100033580 70</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 mt-4">
-                            <img class="img-fluid border-surface-border/30 rounded-lg" src="{{ asset('assets/web/images/yape_plin.png') }}" width="80" alt="">
-                            <div>
-                                <p class="text-sm  text-text-dim">Yape/Plin</p>
-                                <p class="text-sm  text-text-dim">Edith Hellen Vadillo Dionicio</p>
-                                <p class="text-sm font-bold tracking-widest text-white">980 579 173</p> 
-                               
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Step 2: Form -->
-                    <div class="flex flex-col rounded-2xl border border-surface-border bg-surface-dark/40 p-8 backdrop-blur-md">
-                        <div
-                            class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/20 text-secondary font-black text-xl border border-secondary/30">
-                            2
-                        </div>
-                        <h3 class="mb-4 text-xl font-bold text-white">Formulario de inscripción</h3>
-                        <p class="text-sm leading-relaxed text-text-dim">
-                            <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Ingresa tus datos el formulario de inscripción y adjuntando el comprobante de pago.                             
-                        </p>
-                        <p class="text-sm  mt-3 leading-relaxed text-text-dim">
-                            <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Selecciona la distancia y modalidad en la que participaras.                             
-                        </p>
-                        <p class="text-sm mt-3  leading-relaxed text-text-dim">
-                            <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Carga tu comprobante de pago.                             
-                        </p>
-                        <p  class="text-sm mt-3 leading-relaxed text-text-dim">
-                            <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Descargar y firmar el formulario de exención de responsabilidad el cual debera ser entregado el mismo día del evento durante el marcaje.
-                        </p>
-                        <button class="rounded-lg mt-8 bg-primary px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-orange-600 hover:shadow-[0_0_25px_rgba(249,115,22,0.5)] transition-all transform hover:-translate-y-0.5">                        
-                            Inscríbete Ahora
-                        </button>
-                    </div>
-                    <!-- Step 3: Confirmation -->
-                    <div class="flex flex-col rounded-2xl border border-surface-border bg-surface-dark/40 p-8 backdrop-blur-md">
-                        <div
-                            class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/20 text-secondary font-black text-xl border border-secondary/30">
-                            3
-                        </div>
-                        <h3 class="mb-4 text-xl font-bold text-white">Validación de inscripción</h3>
-                        <p class="text-sm leading-relaxed text-text-dim">                            
-                            <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Una vez que su registro esté completo y validado, se le enviará una confirmación a la dirección de correo electrónico que proporcionó.
-                        </p>
-                        <p class="text-sm mt-3 leading-relaxed text-text-dim">                            
-                            <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> El costo de la inscripción es personal e intransferible.
-                        </p>
-                    </div>
-                    <!-- Inquiry Card -->
-                    <!-- <div
-                        class="flex flex-col justify-center rounded-2xl border border-primary/30 bg-primary/5 p-8 backdrop-blur-md">
-                        <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 text-primary">
-                            <span class="material-symbols-outlined">mail</span>
-                        </div>
-                        <h3 class="mb-2 text-xl font-bold text-white">Have Questions?</h3>
-                        <p class="text-sm text-gray-300">
-                            For inquiries, please write to the following email address: <br />
-                            <span class="font-bold text-primary">xxxxxxx@gmail.com</span>
-                        </p>
-                    </div> -->
-                </div>
-            </div>
-
-
         </div>
     </section>
+
+    <section class="py-16 bg-surface-dark/20" id="prices">
+        <div class="pt-12 border-t border-surface-border/30 relative max-w-5xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-white">Precios</h3>
+                <p class="mt-4 text-lg text-text-dim">La inscripción se realizará en 3 fases y hasta completar el <b>cupón límite de inscripción</b></p>
+            </div>
+            <div class="relative">
+                <div class="hidden md:block absolute top-[14px] left-[16%] right-[16%] h-0.5 bg-surface-border z-0">
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="relative flex flex-col items-center group">
+                        <div
+                            class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-secondary border-4 border-background-dark z-10 mb-8 shadow-[0_0_15px_rgba(6,182,212,0.6)]">
+                        </div>
+                        <div
+                            class="w-full rounded-xl border-primary/50 bg-background-dark border  p-6 relative  transition-all shadow-lg shadow-[0_0_40px_rgba(249,115,22,0.1)] ">
+                            <!-- relative flex flex-col rounded-2xl border border-primary/50 bg-background-dark p-8 shadow-[0_0_40px_rgba(249,115,22,0.1)] transform md:-translate-y-4 md:scale-105 z-10 -->
+                            <div
+                                class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-secondary text-background-dark text-xs font-black uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
+                                del 7 de febrero al 21 de marzo
+                            </div>
+                            <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 1</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                                    <span class="text-white font-bold text-lg">1.5 Kilómentros</span>
+                                    <span class="text-white text-lg font-bold">S/ 150.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                                    <span class="text-white font-bold text-lg">3 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 200.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-white font-bold text-lg">6 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 250.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex flex-col items-center group opacity-60  transition-opacity">
+                        <div
+                            class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-surface-border border-4 border-background-dark z-10 mb-8">
+                        </div>
+                        <div
+                            class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
+                            <div
+                                class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
+                                del 22 de marzo al 25 de abril
+                            </div>
+                            <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 2</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                                    <span class="text-gray-400 text-lg">1.5 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 180.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                                    <span class="text-gray-400 text-lg">3 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 230.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-400 text-lg">6 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 280.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex flex-col items-center group opacity-60  transition-opacity">
+                        <div
+                            class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-surface-border border-4 border-background-dark z-10 mb-8">
+                        </div>
+                        <div
+                            class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
+                            <div
+                                class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
+                                del 26 de abril al 24 de mayo
+                            </div>
+                            <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 3</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                                    <span class="text-gray-400 text-lg">1.5 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 210.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                                    <span class="text-gray-400 text-lg">3 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 260.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-400  text-lg">6 Kilómentros</span>
+                                    <span class="text-white font-bold text-lg">S/ 310.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>            
+        <div class="mt-24 pt-16 border-t border-surface-border/30 max-w-7xl mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Cómo inscribirme?</h2>
+                <p class="mt-4 text-lg text-text-dim">Las inscripciones van del 20 de marzo al 29 de mayo de 2026. <br>Para inscribirte puedes hacerlo de la siguiente manera</p>
+            </div>
+            <div class="grid gap-6 md:grid-cols-3">
+                
+                    <!-- Step 1: Banl Details -->
+                <div class="flex flex-col rounded-2xl border border-surface-border bg-surface-dark/40 p-8 backdrop-blur-md">
+                    <div
+                        class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/20 text-secondary font-black text-xl border border-secondary/30">
+                        1
+                    </div>
+                    <h3 class="mb-4 text-xl font-bold text-white">Realizar el pago</h3>
+                    <p class="text-sm leading-relaxed text-text-dim">
+                        <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Depositar a el N° cuenta a nombre de:
+                    </p>
+                    <p class="mt-3 text-sm  leading-relaxed text-white">Asociación Club Deportivo Cultural Aqua Sport
+                    </p>                        
+                    <div class="flex items-center gap-4 mt-4">
+                        <img class="img-fluid border-surface-border/30 rounded-lg"  src="{{ asset('assets/web/images/bcp.webp') }}" width="80" alt="">
+                        <div>
+                            <p class="text-sm  text-text-dim">N° de cuenta</p>
+                            <p class="text-sm font-bold tracking-widest text-white">193-2671168-0-93</p> 
+                            <p class="mt-2 text-sm text-text-dim">N° de cuenta interbancaria</p>
+                            <p class="text-sm font-bold tracking-widest text-white">002-19300267116809319</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 mt-4">
+                        <img class="img-fluid border-surface-border/30 rounded-lg" src="{{ asset('assets/web/images/bbva.webp') }}" width="80" alt="">
+                        <div>
+                            <p class="text-sm  text-text-dim">N° de cuenta</p>
+                            <p class="text-sm font-bold tracking-widest text-white">0011 0284 0100033580</p> 
+                            <p class="mt-2 text-sm text-text-dim">N° de cuenta interbancaria</p>
+                            <p class="text-sm font-bold tracking-widest text-white">011 284 000100033580 70</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 mt-4">
+                        <img class="img-fluid border-surface-border/30 rounded-lg" src="{{ asset('assets/web/images/yape_plin.png') }}" width="80" alt="">
+                        <div>
+                            <p class="text-sm  text-text-dim">Yape/Plin</p>
+                            <p class="text-sm  text-text-dim">Edith Hellen Vadillo Dionicio</p>
+                            <p class="text-sm font-bold tracking-widest text-white">980 579 173</p> 
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2: Form -->
+                <div class="flex flex-col rounded-2xl border border-surface-border bg-surface-dark/40 p-8 backdrop-blur-md">
+                    <div
+                        class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/20 text-secondary font-black text-xl border border-secondary/30">
+                        2
+                    </div>
+                    <h3 class="mb-4 text-xl font-bold text-white">Formulario de inscripción</h3>
+                    <p class="text-sm leading-relaxed text-text-dim">
+                        <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Ingresa tus datos el formulario de inscripción y adjuntando el comprobante de pago.                             
+                    </p>
+                    <p class="text-sm  mt-3 leading-relaxed text-text-dim">
+                        <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Selecciona la distancia y modalidad en la que participaras.                             
+                    </p>
+                    <p class="text-sm mt-3  leading-relaxed text-text-dim">
+                        <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Carga tu comprobante de pago.                             
+                    </p>
+                    <p  class="text-sm mt-3 leading-relaxed text-text-dim">
+                        <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Descargar y firmar el formulario de exención de responsabilidad el cual debera ser entregado el mismo día del evento durante el marcaje.
+                    </p>
+                    <button class="rounded-lg mt-8 bg-primary px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-orange-600 hover:shadow-[0_0_25px_rgba(249,115,22,0.5)] transition-all transform hover:-translate-y-0.5">                        
+                        Inscríbete Ahora
+                    </button>
+                </div>
+                <!-- Step 3: Confirmation -->
+                <div class="flex flex-col rounded-2xl border border-surface-border bg-surface-dark/40 p-8 backdrop-blur-md">
+                    <div
+                        class="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-secondary/20 text-secondary font-black text-xl border border-secondary/30">
+                        3
+                    </div>
+                    <h3 class="mb-4 text-xl font-bold text-white">Validación de inscripción</h3>
+                    <p class="text-sm leading-relaxed text-text-dim">                            
+                        <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Una vez que su registro esté completo y validado, se le enviará una confirmación a la dirección de correo electrónico que proporcionó.
+                    </p>
+                    <p class="text-sm mt-3 leading-relaxed text-text-dim">                            
+                        <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> El costo de la inscripción es personal e intransferible.
+                    </p>
+                </div>
+                <!-- Inquiry Card -->
+                <!-- <div
+                    class="flex flex-col justify-center rounded-2xl border border-primary/30 bg-primary/5 p-8 backdrop-blur-md">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/20 text-primary">
+                        <span class="material-symbols-outlined">mail</span>
+                    </div>
+                    <h3 class="mb-2 text-xl font-bold text-white">Have Questions?</h3>
+                    <p class="text-sm text-gray-300">
+                        For inquiries, please write to the following email address: <br />
+                        <span class="font-bold text-primary">xxxxxxx@gmail.com</span>
+                    </p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
     <section class="py-24 bg-surface-dark/30 relative" id="schedule">
         <div class="absolute inset-0 z-0 opacity-10">
             <div
@@ -628,69 +634,82 @@
                         </thead>
                         <tbody class="divide-y divide-surface-border/50 text-gray-300">
                             <tr class="group hover:bg-white/5 transition-colors">
-                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">7:30 AM</td>
-                                <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">
-                                    Entrega de kits y marcación del deportista</td>
-                                <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-base">pin_drop</span> Mesa Control</td>
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">7:30 AM <br> 8:45 AM</td>
+                                <td class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">
+                                    Entrega de kits, verificación de inscripción y marcación oficial de nadadores
+                                </td>
+                                <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-base">pin_drop</span> Mesa Control
+                                </td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">8:50 AM</td>
+                                <td class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">
+                                    Cierre de cámara de llamadas 6K
+                                </td>
+                                <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-base">pin_drop</span> Mesa Control
+                                </td>
                             </tr>
                             <tr class="group hover:bg-white/5 transition-colors">
                                 <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:00 AM</td>
-                                <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">
-                                    Charla Técnica</td>
+                                <td class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">
+                                    Charla técnica obligatoria</td>
                                 <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
                                         class="material-symbols-outlined text-base">pin_drop</span> Campus</td>
                             </tr>
-                            <tr
-                                class="group hover:bg-white/5 transition-colors border-l-4 border-l-primary/60">
+                            <tr class="group hover:bg-white/5 transition-colors border-l-4 border-l-primary/60">
                                 <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:30 AM</td>
-                                <td class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Inicio de Competencia con aletas 6km</td>
+                                <td class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Salida 1.5 km con aletas</td>
                                 <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-base">flag</span> Boya 2</td>
+                                        class="material-symbols-outlined text-base">flag</span> Boya Partida</td>
                             </tr>
-                            <tr
-                                class="group hover:bg-white/5 transition-colors border-l-4 border-l-transparent hover:border-l-secondary/60">
+                            <tr class="group hover:bg-white/5 transition-colors border-l-4 border-l-transparent hover:border-l-secondary/60">
                                 <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:35 AM </td>
                                 <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Inicio de competencias sin aletas 6km</td>
+                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Salida 1.5 km sin aletas</td>
                                 <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-base">flag</span> Boya 2</td>
+                                        class="material-symbols-outlined text-base">flag</span> Boya Partida</td>
                             </tr>
-                            <tr
-                                class="group hover:bg-white/5 transition-colors border-l-4 border-l-transparent hover:border-l-secondary/60">
-                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:35 AM</td>
+                            <tr class="group hover:bg-white/5 transition-colors border-l-4 border-l-transparent hover:border-l-secondary/60">
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:45 AM</td>
                                 <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Inicio de Competencia con aletas 3km</td>
+                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Salida 3 km con aletas</td>
                                 <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-base">flag</span> Boya 2</td>
-                            </tr>
-                            <tr class="group hover:bg-white/5 transition-colors">
-                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:40 AM</td>
-                                <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Inicio de competencias sin aletas 3km</td>
-                                <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-base">flag</span> Boya 2</td>
+                                        class="material-symbols-outlined text-base">flag</span> Boya Partida</td>
                             </tr>
                             <tr class="group hover:bg-white/5 transition-colors">
-                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">11:20 AM</td>
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:50 AM</td>
                                 <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Inicio de la competencia con aletas 1.5km</td>
+                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Salida 3 km sin aletas</td>
                                 <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-base">flag</span> Boya 2</td>
+                                        class="material-symbols-outlined text-base">flag</span> Boya Partida</td>
                             </tr>
                             <tr class="group hover:bg-white/5 transition-colors">
-                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">11:25 AM</td>
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">9:55 AM</td>
                                 <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Inicio de la competencia sin aletas 1.5km</td>
+                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Salida 6 km con aletas</td>
                                 <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-base">flag</span> Boya 2</td>
+                                        class="material-symbols-outlined text-base">flag</span> Boya Partida</td>
                             </tr>
                             <tr class="group hover:bg-white/5 transition-colors">
-                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">1:00 PM</td>
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">10:00 AM</td>
                                 <td
-                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors"> Premiación</td>
+                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors">Salida 6 km sin aletas</td>
+                                <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-base">flag</span> Boya Partida</td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">1:20 PM</td>
+                                <td
+                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors"> Cierre oficial del circuito y retiro de boyado</td>
+                                <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
+                                        class="material-symbols-outlined text-base">emoji_events</span> Campus</td>
+                            </tr>
+                            <tr class="group hover:bg-white/5 transition-colors">
+                                <td class="py-4 px-6 font-bold text-secondary font-mono text-lg">1:30 PM</td>
+                                <td
+                                    class="py-4 px-6 font-medium text-white group-hover:text-secondary transition-colors"> Ceremonia de premiación</td>
                                 <td class="py-4 px-6 text-sm text-text-dim flex items-center gap-1"><span
                                         class="material-symbols-outlined text-base">emoji_events</span> Campus</td>
                             </tr>
@@ -700,6 +719,7 @@
             </div>
         </div>
     </section>
+
     <section class="py-20 bg-background-dark border-y border-surface-border">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12">
@@ -856,7 +876,7 @@
         </div>
     </section>  
 
-    <section class="relative overflow-hidden py-24">
+    <section class="relative overflow-hidden py-24" id="kit">
         <div class="absolute inset-0 bg-background-dark"></div>
         <div class="absolute inset-0 bg-water-texture bg-cover bg-center opacity-5 mix-blend-overlay"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-background-dark via-transparent to-background-dark"></div>
@@ -904,7 +924,7 @@
                         <span class="material-symbols-outlined text-[32px]">local_activity</span>
                     </div>
                     <h3 class="mb-2 text-lg font-bold text-white">Cupón de descuento</h3>
-                    <p class="text-sm leading-relaxed text-text-dim group-hover:text-gray-300">Cupón de 30% de descuento en tiendas Arena.</p>
+                    <p class="text-sm leading-relaxed text-text-dim group-hover:text-gray-300">Cupón de descuento en tiendas Arena.</p>
                 </div>
                 <div
                     class="group relative flex w-full max-w-[240px] flex-col items-center rounded-2xl border border-white/10 bg-surface-dark/40 p-6 text-center shadow-lg backdrop-blur-md transition-all hover:-translate-y-2 hover:border-secondary/50 hover:bg-surface-dark/60 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)]">
@@ -919,10 +939,10 @@
                     class="group relative flex w-full max-w-[240px] flex-col items-center rounded-2xl border border-white/10 bg-surface-dark/40 p-6 text-center shadow-lg backdrop-blur-md transition-all hover:-translate-y-2 hover:border-secondary/50 hover:bg-surface-dark/60 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)]">
                     <div
                         class="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-orange-500/20 text-primary shadow-inner ring-1 ring-white/10 transition-transform group-hover:scale-110">
-                        <span class="material-symbols-outlined text-[32px]">water_ec</span>
+                        <span class="material-symbols-outlined text-[32px]">coffee</span>
                     </div>
-                    <h3 class="mb-2 text-lg font-bold text-white">Bebida hidratante</h3>
-                    <p class="text-sm leading-relaxed text-text-dim group-hover:text-gray-300">Bebida hidratante incluida para una mejor recuperación post competencia.</p>
+                    <h3 class="mb-2 text-lg font-bold text-white">Bebida caliente</h3>
+                    <p class="text-sm leading-relaxed text-text-dim group-hover:text-gray-300">Bebida caliente al finalizar el recorrido.</p>
                 </div>
             </div>
         </div>
@@ -1054,6 +1074,7 @@
             </div>
         </div>
     </section>
+
     <section class="py-24 bg-surface-dark/20" id="faq">
         <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <h2 class="mb-12 text-center text-4xl font-bold tracking-tight text-white">Preguntas Frecuentes</h2>
@@ -1138,6 +1159,7 @@
             </div>
         </div>
     </section>
+
     <footer class="border-t border-surface-border bg-background-dark py-12">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
