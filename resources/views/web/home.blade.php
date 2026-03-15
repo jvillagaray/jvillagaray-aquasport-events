@@ -928,14 +928,15 @@
                         </div>
                         <h3 class="text-4xl font-bold text-white">Reglamento</h3><br>                        
                     </div>
-                    <div class=" p-3 relative ">                       
-                        <a href="{{ asset('docs/BASES_IV_COPA_LAGUNA_DE_PACA_la_leyenda_2026.pdf') }}" download
-   class="rounded-lg bg-secondary/50 px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
-    
-    <span class="material-symbols-outlined text-base">download</span>
-    Descargar Reglamento
-    
-</a>
+                    <div class="p-3 relative">
+                        <button 
+                            onclick="window.location.href='{{ route('descargar.reglamento') }}'"
+                            class="rounded-lg bg-secondary/50 px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+
+                            <span class="material-symbols-outlined text-base">download</span>
+                            Descargar Reglamento
+
+                        </button>
                     </div>
 
                     
