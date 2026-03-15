@@ -7,11 +7,9 @@
     <title>IV Copa Laguna de Paca</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
@@ -67,6 +65,60 @@
             display: none;
         }
     </style>
+
+<style>
+  .wa-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+  }
+  .wa-button {
+    width: 65px;
+    height: 65px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  .wa-button:hover {
+    transform: scale(1.1);
+  }
+  .wa-message {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 220px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+  }
+  .wa-message p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  .wa-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 18px;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
 </head>
 
 <body class="bg-background-dark text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-white">
@@ -104,6 +156,20 @@
             </div>
         </div>
     </nav>
+    
+    <div id="whatsapp-widget" class="wa-container">
+  <div class="wa-message">
+    <span class="wa-close" onclick="this.parentElement.style.display='none'">×</span>
+    <p><strong>AquaSport Support</strong></p>
+    <p>¡Hola! 👋 ¿En qué podemos ayudarte hoy?</p>
+  </div>
+  <a href="https://wa.me/51980588656?text=Hola,%20solicito%20información" class="wa-button" target="_blank">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.412 2.503 1.112 3.485l-.733 2.678 2.736-.718a5.722 5.722 0 002.653.654h.002c3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.765-5.77-5.765zm3.375 8.203c-.147.415-.852.793-1.201.847-.33.05-.762.068-1.218-.08-.276-.09-1.21-.424-2.103-1.217-.714-.633-1.196-1.413-1.336-1.65-.14-.238-.015-.367.105-.487.107-.107.238-.276.357-.415.118-.139.158-.237.237-.396.08-.16.04-.297-.02-.416-.06-.119-.535-1.287-.732-1.762-.192-.462-.387-.398-.535-.406l-.455-.008c-.158 0-.416.06-.634.297-.218.238-.832.812-.832 1.98s.851 2.297.97 2.456c.119.158 1.674 2.557 4.056 3.586.567.246 1.008.391 1.356.502.57.18 1.088.155 1.498.094.457-.069 1.406-.574 1.605-1.128.197-.554.197-1.03.138-1.128-.059-.098-.218-.158-.476-.287z"/>
+      <path d="M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm0 21.093a9.093 9.093 0 110-18.186 9.093 9.093 0 010 18.186z"/>
+    </svg>
+  </a>
+</div>
     
     <section class="relative flex min-h-[90vh] w-full flex-col justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 overflow-hidden">
