@@ -378,27 +378,27 @@
                     <div class="flex flex-col gap-4">
                         <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
                             <img alt="Stylized dark map view of a lake area"
-                                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
                                 data-location="Distancia 1.5K"
-                                src="{{ asset('assets/web/images/1.5k.jpeg') }}" />                                                        
+                                src="{{ asset('assets/web/images/1.5k.png') }}" />                                                        
                         </div>
 
                     </div>
                     <div class="flex flex-col gap-4">
                         <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
                             <img alt="Stylized dark map view of a lake area"
-                                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
                                 data-location="Distancia 3K"
-                                src="{{ asset('assets/web/images/3k.jpeg') }}" />                                                        
+                                src="{{ asset('assets/web/images/3k.png') }}" />                                                        
                         </div>
 
                     </div>
                     <div class="flex flex-col gap-4">
                         <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
                             <img alt="Stylized dark map view of a lake area"
-                                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                                class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
                                 data-location="Distancia 6K"
-                                src="{{ asset('assets/web/images/6k.jpeg') }}" />                                                        
+                                src="{{ asset('assets/web/images/6k.png') }}" />                                                        
                         </div>
 
                     </div>                
@@ -542,7 +542,7 @@
                             <div>
                                 <p class="text-sm  text-text-dim">Yape/Plin</p>
                                 <p class="text-sm  text-text-dim">Edith Hellen Vadillo Dionicio</p>
-                                <p class="text-sm font-bold tracking-widest text-white">940 246 317</p> 
+                                <p class="text-sm font-bold tracking-widest text-white">980 579 173</p> 
                                
                             </div>
                         </div>
