@@ -446,33 +446,33 @@
             </div>
 
             <div class="grid gap-8 md:grid-cols-3 mt-16">                   
-                    <div class="flex flex-col gap-4">
-                        <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
-                            <img alt="Stylized dark map view of a lake area"
-                                class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
-                                data-location="Distancia 1.5K"
-                                src="{{ asset('assets/web/images/1.5k.jpg') }}" />                                                        
-                        </div>
-
+                <div class="flex flex-col gap-4">
+                    <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
+                        <img alt="Stylized dark map view of a lake area"
+                            class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
+                            data-location="Distancia 1.5K"
+                            src="{{ asset('assets/web/images/circuitos/1_5k.jpg') }}" />                                                        
                     </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
-                            <img alt="Stylized dark map view of a lake area"
-                                class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
-                                data-location="Distancia 3K"
-                                src="{{ asset('assets/web/images/3k.jpg') }}" />                                                        
-                        </div>
 
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
+                        <img alt="Stylized dark map view of a lake area"
+                            class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
+                            data-location="Distancia 3K"
+                            src="{{ asset('assets/web/images/circuitos/3k.jpg') }}" />                                                        
                     </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
-                            <img alt="Stylized dark map view of a lake area"
-                                class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
-                                data-location="Distancia 6K"
-                                src="{{ asset('assets/web/images/6k.jpg') }}" />                                                        
-                        </div>
 
-                    </div>                
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="order-1 lg:order-2 h-[500px] w-full overflow-hidden rounded-2xl bg-surface-dark relative border border-surface-border group">
+                        <img alt="Stylized dark map view of a lake area"
+                            class="h-full w-full object-fill transition-transform duration-700 group-hover:scale-105 opacity-80"
+                            data-location="Distancia 6K"
+                            src="{{ asset('assets/web/images/circuitos/6k.jpg') }}" />                                                        
+                    </div>
+
+                </div>                
             </div>
         </div>
     </section>
