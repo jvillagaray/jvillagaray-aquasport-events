@@ -66,58 +66,58 @@
         }
     </style>
 
-<style>
-  .wa-container {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999;
-    font-family: Arial, sans-serif;
-  }
-  .wa-button {
-    width: 65px;
-    height: 65px;
-    background-color: #25d366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
-  .wa-button:hover {
-    transform: scale(1.1);
-  }
-  .wa-message {
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    width: 220px;
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    animation: fadeIn 0.5s ease forwards;
-    opacity: 0;
-  }
-  .wa-message p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #333;
-  }
-  .wa-close {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-    color: #aaa;
-    font-size: 18px;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+    <style>
+    .wa-container {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+        font-family: Arial, sans-serif;
+    }
+    .wa-button {
+        width: 65px;
+        height: 65px;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .wa-button:hover {
+        transform: scale(1.1);
+    }
+    .wa-message {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 220px;
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        animation: fadeIn 0.5s ease forwards;
+        opacity: 0;
+    }
+    .wa-message p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333;
+    }
+    .wa-close {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+        color: #aaa;
+        font-size: 18px;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
 
 </head>
 
@@ -928,12 +928,14 @@
                         </div>
                         <h3 class="text-4xl font-bold text-white">Reglamento</h3><br>                        
                     </div>
-                    <div class=" p-3 relative ">  
-                        
-                        <button class="rounded-lg bg-secondary/50 px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all transform hover:-translate-y-0.5 flex items-center gap-2">                        
-                            <span class="material-symbols-outlined text-base">download</span>
-                            Descargar Reglamento
-                        </button>
+                    <div class=" p-3 relative ">                       
+                        <a href="{{ asset('docs/BASES_IV_COPA_LAGUNA_DE_PACA_la_leyenda_2026.pdf') }}" download
+   class="rounded-lg bg-secondary/50 px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+    
+    <span class="material-symbols-outlined text-base">download</span>
+    Descargar Reglamento
+    
+</a>
                     </div>
 
                     
