@@ -314,15 +314,21 @@ function calculateAge(dateString) {
 /** Devuelve la fase cuyo rango starts_at–ends_at contiene la fecha actual, o null. */
 function findCurrentPhase(phases) {
     const now = new Date();
-    return phases.find(p => now >= new Date(p.starts_at) && now <= new Date(p.ends_at)) ?? null;
+    return phases.find(p => {
+        const start = new Date(p.starts_at);
+        const end   = new Date(p.ends_at);
+        end.setHours(23, 59, 59, 999); // incluir todo el último día
+        return now >= start && now <= end;
+    }) ?? null;
 }
 
 /** Busca el registro de precio para la combinación fase + distancia + modalidad. */
 function findPrice(prices, phaseId, distanceId, modeId) {
     return prices.find(p =>
-        p.event_phase_id    === phaseId &&
-        p.event_distance_id === distanceId &&
-        p.event_mode_id     === modeId
+        // == en lugar de === para evitar fallo por int vs string
+        p.event_phase_id    == phaseId &&
+        p.event_distance_id == distanceId &&
+        p.event_mode_id     == modeId
     ) ?? null;
 }
 
