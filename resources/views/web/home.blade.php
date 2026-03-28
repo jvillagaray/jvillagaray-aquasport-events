@@ -148,8 +148,7 @@
                     <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="#faq">FAQ</a>
                 </div>
                 <div class="flex items-center gap-4">
-                    <a type="button" href="register.php" class="group relative flex h-12 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-primary px-6 text-base font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:bg-orange-600 hover:scale-105">                        
-                                
+                    <a type="button" href="{{ route('registro.create') }}" class="group relative flex h-12 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-primary px-6 text-base font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:bg-orange-600 hover:scale-105">                                                        
                         Inscríbete Ahora
                     </a>
                 </div>
@@ -246,12 +245,10 @@
                     solo aquellos que quieren ser parte de la leyenda
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <button class="group relative flex h-12 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-primary px-6 text-base font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:bg-orange-600 hover:scale-105">
+                    <a href="{{ route('registro.create') }}" class="group relative flex h-12 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-primary px-6 text-base font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:bg-orange-600 hover:scale-105">
                         <span class="relative z-10">Inscríbete Ahora</span>
-                        <div
-                            class="absolute inset-0 -z-10 bg-gradient-to-r from-orange-600 to-orange-500 opacity-0 transition-opacity group-hover:opacity-100">
-                        </div>
-                    </button>
+                        <div class="absolute inset-0 -z-10 bg-gradient-to-r from-orange-600 to-orange-500 opacity-0 transition-opacity group-hover:opacity-100"></div>
+                    </a>
                     <button  class="flex h-12 min-w-[160px] items-center justify-center gap-2 rounded-lg border border-surface-border bg-surface-dark/50 px-6 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-surface-dark hover:border-gray-400">
                         <span class="material-symbols-outlined">play_arrow</span>
                         Ver Video
@@ -597,7 +594,8 @@
                         <img class="img-fluid border-surface-border/30 rounded-lg"  src="{{ asset('assets/web/images/bcp.webp') }}" width="80" alt="">
                         <div>
                             <p class="text-sm  text-text-dim">N° de cuenta</p>
-                            <p class="text-sm font-bold tracking-widest text-white">193-2671168-0-93</p> 
+                            <p class="text-sm font-bold tracking-widest text-white">193-2671168-0-93</p>
+                            <i class="copy" ></i> 
                             <p class="mt-2 text-sm text-text-dim">N° de cuenta interbancaria</p>
                             <p class="text-sm font-bold tracking-widest text-white">002-19300267116809319</p>
                         </div>
@@ -640,9 +638,9 @@
                     <p  class="text-sm mt-3 leading-relaxed text-text-dim">
                         <span class="material-symbols-outlined text-secondary text-[15px]">arrow_forward_ios</span> Descargar y firmar el formulario de exención de responsabilidad el cual debera ser entregado el mismo día del evento durante el marcaje.
                     </p>
-                    <button class="rounded-lg mt-8 bg-primary px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-orange-600 hover:shadow-[0_0_25px_rgba(249,115,22,0.5)] transition-all transform hover:-translate-y-0.5">                        
+                    <a href="{{ route('registro.create') }}" class="rounded-lg mt-8 bg-primary px-5 h-12 py-2 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:bg-orange-600 hover:shadow-[0_0_25px_rgba(249,115,22,0.5)] transition-all transform hover:-translate-y-0.5 flex items-center justify-center">
                         Inscríbete Ahora
-                    </button>
+                    </a>
                 </div>
                 <!-- Step 3: Confirmation -->
                 <div class="flex flex-col rounded-2xl border border-surface-border bg-surface-dark/40 p-8 backdrop-blur-md">
@@ -789,35 +787,7 @@
     <section class="py-20 bg-background-dark border-y border-surface-border">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12">
-                <!-- <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-2 bg-secondary/10 rounded-lg">
-                            <span class="material-symbols-outlined text-secondary">groups</span>
-                        </div>
-                        <h3 class="text-4xl font-bold text-white">Categorías</h3>
-                    </div>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div
-                            class="bg-surface-dark border border-surface-border rounded-xl p-6 hover:border-secondary/30 transition-colors">
-                            <h4 class="text-2xl font-bold text-white mb-4">Promocional</h4>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 22 a 15 años</p>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 16 a 19 años</p>
-                            <p class="mt-4 text-sm text-text-dim italic">* No está habilitado para distancia 6K.</p>
-                        </div>
-                        <div
-                            class="bg-surface-dark border border-surface-border rounded-xl p-6 hover:border-secondary/30 transition-colors">
-                            <h4 class="text-2xl font-bold text-white mb-4">Masters</h4>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 20 a 29 años</p>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 30 a 39 años</p>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 40 a 49 años</p>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 50 a 59 años</p>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 60 a 69 años</p>
-                            <p class="text-lg font-black text-secondary flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-secondary text-[25px]">expand_circle_right</span> 70 a 79 años</p>
-                            
-                        </div>
-                    </div>
-                    <p class="mt-4 text-sm text-text-dim italic">* Edad calculada al 5 de junio del 2026.</p>
-                </div> -->
+                
                 <div>
                 <div class="flex items-center gap-3 mb-6">
                     <div class="p-2 bg-secondary/10 rounded-lg">
@@ -1234,16 +1204,33 @@
             <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div class="flex items-center gap-2">
                     <!-- <span class="material-symbols-outlined text-secondary">waves</span> -->
-                    <span class="text-xl font-bold text-white">Club Aqua Sport</span>
+                    <!-- <span class="text-xl font-bold text-white">Club Aqua Sport</span> -->
+                     <img src="{{ asset('assets/web/images/logo.png') }}" alt="Club Aqua Sport" class="img-fluid" width="100px">
                 </div>
+                <div class="text-sm text-text-dim">
+                    © 2026 All rights reserved.
+                </div>
+                
                 <div class="flex gap-8 text-sm text-text-dim">
                     <a class="hover:text-primary transition-colors" href="#">Terminos de Servicio</a>
                     <a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a>
                     <a class="hover:text-primary transition-colors" href="#">Contacto</a>
                 </div>
-                <div class="text-sm text-text-dim">
-                    © 2026 Club Aqua Sport. All rights reserved.
+                <div class="flex items-center gap-4 ml-6" id="social-links">
+                    <a href="https://www.instagram.com/club_aqua_sport/" target="_blank" class="flex items-center justify-center w-8 h-8 rounded-full border border-surface-border text-text-dim hover:text-primary hover:border-primary transition-all duration-300" href="#">
+                    <img src="{{ asset('assets/web/images/redes/facebook.png') }}" alt="Facebook" class="w-8 h-8">
+                    </a>
+                    <a href="https://www.instagram.com/club_aqua_sport/" target="_blank" class="flex items-center justify-center w-8 h-8 rounded-full border border-surface-border text-text-dim hover:text-primary hover:border-primary transition-all duration-300" href="#">
+                    <img src="{{ asset('assets/web/images/redes/instagram.png') }}" alt="Instagram" class="w-8 h-8">
+                    </a>
+                    <a href="https://www.youtube.com/@ClubAquaSport" target="_blank" class="flex items-center justify-center w-8 h-8 rounded-full border border-surface-border text-text-dim hover:text-primary hover:border-primary transition-all duration-300" href="#">
+                    <img src="{{ asset('assets/web/images/redes/youtube.png') }}" alt="YouTube" class="w-8 h-8">
+                    </a>
+                    <a href="http://tiktok.com/@clubaquasport" target="_blank" class="flex items-center justify-center w-8 h-8 rounded-full border border-surface-border text-text-dim hover:text-primary hover:border-primary transition-all duration-300" href="#">
+                    <img src="{{ asset('assets/web/images/redes/tik-tok.png') }}" alt="TikTok" class="w-8 h-8">
+                    </a>
                 </div>
+                
             </div>
         </div>
     </footer>
