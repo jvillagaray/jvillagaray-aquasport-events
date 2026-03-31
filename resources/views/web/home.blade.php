@@ -35,6 +35,15 @@
             },
         }
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31M6WJ2267"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-31M6WJ2267');
+    </script>
     <style>
         ::-webkit-scrollbar {
             width: 8px;

@@ -21,6 +21,15 @@
             }
         }
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-31M6WJ2267"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-31M6WJ2267');
+    </script>
 </head>
 <body class="font-display antialiased bg-[#0f172a] text-slate-200 min-h-screen flex items-center justify-center p-4">
 

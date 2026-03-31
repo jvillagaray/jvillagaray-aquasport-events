@@ -5,6 +5,7 @@ namespace App\Mail;
 use App\Models\Registration;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -21,6 +22,10 @@ class RegistrationReceived extends Mailable
     {
         return new Envelope(
             subject: 'Inscripción recibida – IV Copa Laguna de Paca 2026',
+            bcc: [
+                // Copia oculta de evidencia — comentar esta línea para desactivar
+                new Address('johnny.villagaray@gmail.com', 'AquaSport Admin'),
+            ],
         );
     }
 
