@@ -480,11 +480,20 @@
                             for="step1">
                             Anterior
                         </label>
-                        <button type="submit"
+                        <button type="submit" id="submit-btn"
                             class="group relative w-2/3 overflow-hidden rounded-xl bg-primary px-5 py-4 text-center font-bold text-white shadow-[0_0_20px_rgba(249,116,21,0.3)] transition-all hover:bg-orange-500 hover:shadow-[0_0_30px_rgba(249,116,21,0.6)] hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-slate-900">
-                            <span class="relative z-10 flex items-center justify-center gap-2">
+                            {{-- Estado normal --}}
+                            <span id="submit-label" class="relative z-10 flex items-center justify-center gap-2">
                                 Completar Registro
                                 <span class="material-symbols-outlined text-xl">check_circle</span>
+                            </span>
+                            {{-- Estado cargando (oculto por defecto) --}}
+                            <span id="submit-loading" class="hidden relative z-10 flex items-center justify-center gap-2">
+                                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                                </svg>
+                                Enviando...
                             </span>
                             <div
                                 class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]">

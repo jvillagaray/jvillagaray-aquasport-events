@@ -24,7 +24,7 @@ class RegistrationReceived extends Mailable
             subject: 'Inscripción recibida – IV Copa Laguna de Paca 2026',
             bcc: [
                 // Copia oculta de evidencia — comentar esta línea para desactivar
-                new Address('johnny.villagaray@gmail.com', 'AquaSport Admin'),
+                new Address('club.aqua.sport@gmail.com', 'AquaSport Admin'),
             ],
         );
     }

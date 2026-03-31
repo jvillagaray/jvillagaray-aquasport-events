@@ -65,6 +65,18 @@ function initStepValidation() {
                     noPrice.classList.remove('hidden');
                     noPrice.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
+                return;
+            }
+
+            // Deshabilitar botón para evitar envíos duplicados
+            const btn     = document.getElementById('submit-btn');
+            const label   = document.getElementById('submit-label');
+            const loading = document.getElementById('submit-loading');
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-75', 'cursor-not-allowed', 'pointer-events-none');
+                label?.classList.add('hidden');
+                loading?.classList.remove('hidden');
             }
         });
     }
