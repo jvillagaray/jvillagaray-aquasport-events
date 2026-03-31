@@ -158,7 +158,7 @@
 <body class="font-display antialiased text-slate-200">
     <div class="fixed inset-0 z-0">
         <div class="absolute inset-0 bg-cover  bg-no-repeat"
-            style="background-image: url('{{ asset('assets/web/images/capi6.png') }}');">
+            style="background-image: url('{{ asset('assets/web/images/capi_10_2c.png') }}');">
         </div>
         <div class="absolute inset-0  mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-navy-overlay/50 " style="--tw-gradient-to:rgb(83 89 120 / 46%)"></div>
