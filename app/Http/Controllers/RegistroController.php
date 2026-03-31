@@ -13,10 +13,12 @@ use App\Models\Registration;
 use App\Models\RegistrationPayment;
 use App\Models\ShirtSize;
 use App\Models\Waiver;
+use App\Mail\RegistrationReceived;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -141,6 +143,20 @@ class RegistroController extends Controller
             // Guardar número de registro en sesión para mostrarlo en la confirmación
             session(['registration_number' => $registration->registration_number]);
         });
+
+        // Enviar correo de confirmación al participante (fuera de la transacción para no
+        // bloquearla si el servicio de correo falla)
+        try {
+            $registration = Registration::with(['participant', 'distance', 'mode', 'shirtSize'])
+                ->where('registration_number', session('registration_number'))
+                ->firstOrFail();
+
+            Mail::to($registration->participant->email)
+                ->send(new RegistrationReceived($registration));
+        } catch (\Throwable $e) {
+            // El correo no es crítico: si falla, el registro ya está guardado
+            logger()->error('Error enviando correo de confirmación: ' . $e->getMessage());
+        }
 
         return redirect()->route('registro.confirmacion');
     }

@@ -177,12 +177,12 @@
                 allow="autoplay; encrypted-media" 
                 class="absolute top-1/2 left-1/2 min-w-full min-h-full w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 object-cover opacity-50 pointer-events-none" 
                 frameborder="0" 
-                src="https://www.youtube.com/embed/JqMkdnURReA?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=JqMkdnURReA&amp;playsinline=1&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;disablekb=1" 
+                src="https://www.youtube.com/embed/nRmWQY-v1nk?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=nRmWQY-v1nk&amp;playsinline=1&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;disablekb=1" 
                 tabindex="-1" 
                 referrerpolicy="strict-origin-when-cross-origin"
                 title="Background Video">
             </iframe>
-            <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent">
+            <div class="absolute inset-0 bg-gradient-to-t  via-background-dark/50 to-transparent">
             </div>
             <div class="absolute inset-0 bg-gradient-to-r from-background-dark/80 to-transparent"></div>
         </div>
@@ -493,7 +493,7 @@
                             <!-- relative flex flex-col rounded-2xl border border-primary/50 bg-background-dark p-8 shadow-[0_0_40px_rgba(249,115,22,0.1)] transform md:-translate-y-4 md:scale-105 z-10 -->
                             <div
                                 class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-secondary text-background-dark text-xs font-black uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                del 7 de febrero al 21 de marzo
+                                del 12 de marzo al 11 de abril
                             </div>
                             <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 1</h4>
                             <div class="space-y-3">
@@ -521,7 +521,7 @@
                             class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
                             <div
                                 class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                del 22 de marzo al 25 de abril
+                                del 12 de abril al 2 de mayo
                             </div>
                             <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 2</h4>
                             <div class="space-y-3">
@@ -549,7 +549,7 @@
                             class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
                             <div
                                 class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                del 26 de abril al 24 de mayo
+                                del 3 de mayo al 24 de mayo
                             </div>
                             <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 3</h4>
                             <div class="space-y-3">

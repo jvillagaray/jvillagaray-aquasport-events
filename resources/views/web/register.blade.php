@@ -62,7 +62,8 @@
         }
 
         .glass-card {
-            background: rgba(30, 41, 59, 0.75);
+            /* background: rgba(30, 41, 59, 0.75); */
+            background-color: rgb(10 52 120 / 75%);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -110,16 +111,57 @@
             text-transform: uppercase;
             background-color: rgba(15, 23, 42, 0.5);;
         }
+
+        /* ── Club searchable dropdown ─────────────────────────────────── */
+        #club-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            margin-top: 4px;
+            background: #1e293b;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        #club-dropdown.open { display: block; }
+        #club-dropdown .club-option {
+            padding: 8px 12px;
+            margin: 2px 4px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            color: #cbd5e1;
+            text-transform: none;
+        }
+        #club-dropdown .club-option:hover,
+        #club-dropdown .club-option.highlighted {
+            background: rgba(249,116,21,0.15);
+            color: #fff;
+        }
+        #club-dropdown .club-no-results {
+            padding: 10px 12px;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        #club-dropdown::-webkit-scrollbar { width: 4px; }
+        #club-dropdown::-webkit-scrollbar-thumb { background: #334155; border-radius: 2px; }
+        /* El input de búsqueda no debe aplicar text-transform */
+        #club-search { text-transform: none !important; }
     </style>
 </head>
 
 <body class="font-display antialiased text-slate-200">
     <div class="fixed inset-0 z-0">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSsR9zAQt9IImXdSVTQvdiMNkD45C8jp5PHSHGkamJ7eNCoawDgiCRaQz-zB28fo-einWf49km3YA-yEv-lq39-j6HNTRsomvkybv04cC-9qhm37HZ8bvZ12cNZ64DJ-DLCQTWlWqQ_xLdGs8WW_mDpOJ9cwiZJDBADJueyCEjE-mgZfCzMdtZ9FOjRTdwCjY6yqiL4a2YfyMux_l6zx3cDlqwxzZMmuSPgqQGYPUrvTndCK1zF0Xf9oE8IYA0c4GivR8mDMa4ADg');">
+        <div class="absolute inset-0 bg-cover  bg-no-repeat"
+            style="background-image: url('{{ asset('assets/web/images/capi6.png') }}');">
         </div>
-        <div class="absolute inset-0 bg-navy-overlay/85 mix-blend-multiply"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-navy-overlay/50 to-navy-overlay/90"></div>
+        <div class="absolute inset-0  mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-overlay/50 " style="--tw-gradient-to:rgb(83 89 120 / 46%)"></div>
     </div>
     <div class="relative z-10 flex min-h-screen w-full items-center justify-center p-4 py-8">
         <div class="glass-card w-full max-w-[600px] rounded-2xl overflow-hidden animate-fade-in-up flex flex-col">
@@ -302,20 +344,24 @@
                         <div class="space-y-1.5">
                             <label class="block text-xs font-semibold text-slate-300">Club</label>
                             <div class="relative">
-                                <select id="clubs" name="club_id"
-                                    class="input-glass w-full appearance-none rounded-lg px-3 py-2.5 pr-8 text-sm outline-none">
-                                    <option value="" disabled selected>Selecciona un club...</option>
-                                    <option value="none">Independiente (sin club)</option>
+                                {{-- Select oculto: mantiene el valor para envío del formulario --}}
+                                <select id="clubs" name="club_id" class="hidden">
+                                    <option value="">Selecciona un club...</option>
+                                    <option value="none" {{ old('club_id') == 'none' ? 'selected' : '' }}>Independiente (sin club)</option>
                                     @foreach($clubs as $club)
                                         <option value="{{ $club->id }}" {{ old('club_id') == $club->id ? 'selected' : '' }}>
                                             {{ $club->name }}
                                         </option>
                                     @endforeach
                                 </select>
-                                <div
-                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5 text-slate-400">
+                                {{-- Input visible con búsqueda integrada --}}
+                                <input type="text" id="club-search"
+                                    class="input-glass w-full rounded-lg px-3 py-2.5 pr-8 text-sm placeholder-slate-500 outline-none"
+                                    placeholder="Buscar club..." autocomplete="off" />
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5 text-slate-400">
                                     <span class="material-symbols-outlined text-lg">expand_more</span>
                                 </div>
+                                <div id="club-dropdown"></div>
                             </div>
                         </div>
                         <div class="space-y-1.5">
@@ -445,6 +491,106 @@
             </div>
         </div>
     </div>
+
+    <script>
+    (function () {
+        function initClubSearch() {
+            const select   = document.getElementById('clubs');
+            const search   = document.getElementById('club-search');
+            const dropdown = document.getElementById('club-dropdown');
+            if (!select || !search || !dropdown) return;
+
+            // Construir lista de opciones desde el select oculto
+            const options = Array.from(select.options)
+                .filter(o => o.value !== '')
+                .map(o => ({ value: o.value, text: o.text.trim() }));
+
+            let highlighted = -1;
+
+            // Pre-rellenar si old() ya tiene un valor (tras error del servidor)
+            if (select.value) {
+                const match = options.find(o => o.value == select.value);
+                if (match) search.value = match.text;
+            }
+
+            function renderOptions(list) {
+                highlighted = -1;
+                dropdown.innerHTML = list.length
+                    ? list.map(o =>
+                        `<div class="club-option" data-value="${o.value}">${o.text}</div>`
+                      ).join('')
+                    : '<div class="club-no-results">No se encontró ningún club</div>';
+                dropdown.classList.add('open');
+            }
+
+            function applyHighlight() {
+                dropdown.querySelectorAll('.club-option').forEach((el, i) => {
+                    el.classList.toggle('highlighted', i === highlighted);
+                    if (i === highlighted) el.scrollIntoView({ block: 'nearest' });
+                });
+            }
+
+            function pick(value, text) {
+                select.value = value;
+                search.value = text;
+                dropdown.classList.remove('open');
+                search.blur();
+            }
+
+            // Abrir dropdown al hacer foco
+            search.addEventListener('focus', () => {
+                const q = search.value.trim().toLowerCase();
+                renderOptions(q ? options.filter(o => o.text.toLowerCase().includes(q)) : options);
+            });
+
+            // Borrar selección al empezar a escribir de nuevo
+            search.addEventListener('input', () => {
+                const q = search.value.trim().toLowerCase();
+                if (!q) select.value = '';
+                renderOptions(q ? options.filter(o => o.text.toLowerCase().includes(q)) : options);
+            });
+
+            // Navegación con teclado
+            search.addEventListener('keydown', (e) => {
+                const items = dropdown.querySelectorAll('.club-option');
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    highlighted = Math.min(highlighted + 1, items.length - 1);
+                    applyHighlight();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    highlighted = Math.max(highlighted - 1, 0);
+                    applyHighlight();
+                } else if (e.key === 'Enter' && highlighted >= 0) {
+                    e.preventDefault();
+                    const item = items[highlighted];
+                    if (item) pick(item.dataset.value, item.textContent.trim());
+                } else if (e.key === 'Escape') {
+                    dropdown.classList.remove('open');
+                    search.blur();
+                }
+            });
+
+            // Clic en una opción
+            dropdown.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                const item = e.target.closest('.club-option');
+                if (item) pick(item.dataset.value, item.textContent.trim());
+            });
+
+            // Cerrar al perder el foco
+            search.addEventListener('blur', () => {
+                setTimeout(() => {
+                    dropdown.classList.remove('open');
+                    // Si no se seleccionó nada válido, limpiar
+                    if (!select.value) search.value = '';
+                }, 200);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initClubSearch);
+    })();
+    </script>
 
     {{-- Datos de fases y precios embebidos como JSON (catalog público, no sensible) --}}
     <script id="aquasport-data" type="application/json">{!! json_encode([
