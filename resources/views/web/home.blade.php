@@ -199,7 +199,7 @@
             <div class="max-w-3xl">
                 <div class="mb-6 h-10 inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary backdrop-blur-sm">
                     <span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                    6 Junio, 2026 • La Náutica – Laguna de Paca, Jauja, Perú
+                    13 Junio, 2026 • La Náutica – Laguna de Paca, Jauja, Perú
                 </div>
                 <h1 class="mb-8 text-5xl font-black leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl">
                     La Leyenda de Paca no se cuenta…<br />
@@ -1247,8 +1247,8 @@
 </body>
 
 <script>
-    // Fecha del evento: 6 junio 2026, 07:00:00 (hora local Perú)
-    const eventDate = new Date('2026-06-06T07:09:00-05:00');
+    // Fecha del evento: 13 junio 2026, 07:09:00 (hora local Perú)
+    const eventDate = new Date('2026-06-13T07:09:00-05:00');
 
     function updateCountdown() {
         const now = new Date();

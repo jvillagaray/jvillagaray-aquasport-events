@@ -297,7 +297,7 @@
             </div>
         </div>
 
-        <div class="step">
+        <!-- <div class="step">
             <div class="step-indicator active">2</div>
             <div class="step-text">
                 <strong>Revisión del pago (24–48 h)</strong>
@@ -311,10 +311,10 @@
                 <strong>Confirmación de inscripción</strong>
                 <span>Recibirás un correo con tu confirmación oficial y número de dorsal.</span>
             </div>
-        </div>
+        </div> -->
 
         <div class="step">
-            <div class="step-indicator next">4</div>
+            <div class="step-indicator next">2</div>
             <div class="step-text">
                 <strong>Día del evento — llevar waiver firmado</strong>
                 <span>Descarga, firma y presenta el documento de descargo el día de la competencia.</span>
@@ -341,7 +341,7 @@
         <p>
             Este correo fue generado automáticamente al completar tu inscripción.<br />
             Por favor no respondas a este mensaje directamente.<br />
-            ¿Dudas? Escríbenos a <a href="mailto:info@clubaquasport.com">info@clubaquasport.com</a>
+            ¿Dudas? Escríbenos a <a href="mailto:inscripciones@clubaquasport.com">inscripciones@clubaquasport.com</a>
             o por <a href="https://wa.me/51980588656">WhatsApp</a>.
         </p>
     </div>
