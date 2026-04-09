@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRegistrationRequest;
 use App\Models\Club;
+use App\Models\EventCategory;
 use App\Models\EventDistance;
 use App\Models\EventMode;
 use App\Models\EventPhase;
@@ -59,9 +60,15 @@ class RegistroController extends Controller
         $eventPrices = EventPrice::whereIn('event_phase_id', $eventPhases->pluck('id'))
             ->get(['id', 'event_phase_id', 'event_distance_id', 'event_mode_id', 'price']);
 
+        // Categorías activas para cálculo dinámico por edad en el cliente
+        $eventCategories = EventCategory::where('event_id', 1)
+            ->where('status', 'active')
+            ->orderBy('min_age')
+            ->get(['id', 'name', 'min_age', 'max_age']);
+
         return view('web.register', compact(
             'clubs', 'eventDistances', 'eventModes', 'shirtSizes',
-            'eventPhases', 'eventPrices'
+            'eventPhases', 'eventPrices', 'eventCategories'
         ));
     }
 

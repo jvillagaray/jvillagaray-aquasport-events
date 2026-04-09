@@ -446,7 +446,7 @@
                         <label class="block text-xs font-semibold text-slate-300">Subir Comprobante de Pago</label>
                         <div
                             class="group relative flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-600 bg-slate-800/30 px-6 py-6 text-center transition hover:border-cyan-400 hover:bg-slate-800/50">
-                            <input accept="image/*,.pdf" name="voucher" old('voucher') value="{{ old('voucher') }}"
+                            <input accept="image/*" name="voucher" old('voucher') value="{{ old('voucher') }}"
                                 class="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0" type="file" />
                             <div
                                 class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-700 text-slate-400 transition group-hover:bg-cyan-900/30 group-hover:text-cyan-400">
@@ -467,7 +467,8 @@
                         </div>
                         <div class="text-xs">
                             <label class="font-medium text-slate-300 cursor-pointer" for="terms">Acepto los <a
-                                    class="text-cyan-400 hover:text-cyan-300 hover:underline" href="#">Términos y
+                                    id="terms-link"
+                                    class="text-cyan-400 hover:text-cyan-300 hover:underline" href="#terms-modal">Términos y
                                     Condiciones</a> y declaro que estoy físicamente apto para esta competencia.</label>
                             @error('terms')
                                 <p class="mt-1 text-red-400">{{ $message }}</p>
@@ -625,7 +626,161 @@
             'event_mode_id'     => $p->event_mode_id,
             'price'             => (float) $p->price,
         ]),
+        'categories' => $eventCategories->map(fn($c) => [
+            'id'      => $c->id,
+            'name'    => $c->name,
+            'min_age' => (int) $c->min_age,
+            'max_age' => (int) $c->max_age,
+        ]),
     ]) !!}</script>
+
+    {{-- ══════════════════════════════════════════════════════
+         MODAL: Términos y Condiciones
+    ══════════════════════════════════════════════════════ --}}
+    <div id="terms-modal"
+         role="dialog" aria-modal="true" aria-labelledby="terms-modal-title"
+         class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+
+        {{-- Backdrop --}}
+        <div id="terms-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+        {{-- Panel --}}
+        <div class="relative z-10 w-full max-w-2xl max-h-[85vh] flex flex-col rounded-2xl"
+             style="background-color:rgb(10 52 120/90%);border:1px solid rgba(255,255,255,.1);box-shadow:0 25px 50px -12px rgba(0,0,0,.6)">
+
+            {{-- Header --}}
+            <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
+                <div>
+                    <h2 id="terms-modal-title" class="text-base font-black text-white">Términos y Condiciones</h2>
+                    <p class="text-xs text-cyan-400 uppercase tracking-widest">IV Copa Laguna de Paca 2026</p>
+                </div>
+                <button id="terms-close"
+                        class="flex items-center justify-center w-8 h-8 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition"
+                        aria-label="Cerrar">
+                    <span class="material-symbols-outlined text-xl">close</span>
+                </button>
+            </div>
+
+            {{-- Cuerpo desplazable --}}
+            <div class="overflow-y-auto px-6 py-5 space-y-4 text-sm text-slate-300 leading-relaxed flex-1">
+
+                <p class="text-xs text-slate-500">Última actualización: abril 2026</p>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">1. Aceptación</h3>
+                    <p>Al completar la inscripción, el participante (o su representante legal si es menor) declara haber leído y aceptado íntegramente estos Términos y el Reglamento Oficial del evento.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">2. Requisitos de participación</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-1">
+                        <li>Mínimo <strong class="text-slate-100">12 años cumplidos</strong> al día del evento.</li>
+                        <li>Menores de 18 años deben presentar autorización escrita del padre, madre o tutor.</li>
+                        <li>El participante declara encontrarse físicamente apto para la distancia y modalidad elegida.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">3. Inscripción y pago</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-1">
+                        <li>La inscripción queda <strong class="text-slate-100">reservada</strong> al enviar el formulario con comprobante.</li>
+                        <li>Queda <strong class="text-slate-100">confirmada</strong> una vez el organizador valide el pago (24–48 h hábiles).</li>
+                        <li>El precio aplicable es el vigente en la fase activa al momento del pago.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">4. Cancelaciones y devoluciones</h3>
+                    <ul class="list-disc list-inside space-y-1 pl-1">
+                        <li><strong class="text-slate-100">Por el participante:</strong> No se realizan devoluciones tras confirmar la inscripción. Se puede ceder a otra persona con aprobación del organizador hasta 7 días antes del evento.</li>
+                        <li><strong class="text-slate-100">Por fuerza mayor:</strong> El organizador comunicará alternativas (reprogramación o crédito). No se garantiza devolución de dinero.</li>
+                        <li>El organizador puede modificar recorridos, horarios o categorías por seguridad sin derecho a devolución.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">5. Exoneración de responsabilidad</h3>
+                    <p>El participante asume plena responsabilidad por lesiones, accidentes o daños ocurridos durante el evento. La Asociación Club Deportivo Cultural Aqua Sport no sera responsable por accidentes, robos o pérdidas de cualquier naturaleza. El participante declara conocer los riesgos inherentes a la natación en aguas abiertas.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">6. Uso de imagen</h3>
+                    <p>El participante autoriza la captura y publicación de su imagen con fines de difusión del evento en redes sociales y medios de comunicación, sin compensación económica. Para no autorizar, deberá comunicarlo por escrito antes del evento.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">7. Protección de datos (Ley N° 29733)</h3>
+                    <p>Los datos personales se usarán exclusivamente para la gestión del evento y no serán cedidos a terceros. Para ejercer sus derechos: <a href="mailto:inscripciones@clubaquasport.com" class="text-cyan-400 hover:underline">inscripciones@clubaquasport.com</a></p>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">8. Reglamento</h3>
+                    <p>El incumplimiento del Reglamento Oficial puede resultar en descalificación sin reembolso. Las decisiones del jurado son inapelables.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-bold text-cyan-300 uppercase tracking-wider mb-1">9. Contacto</h3>
+                    <p>
+                        <a href="mailto:inscripciones@clubaquasport.com" class="text-cyan-400 hover:underline">inscripciones@clubaquasport.com</a><br>
+                        WhatsApp: <a href="https://wa.me/51980588656" target="_blank" class="text-cyan-400 hover:underline">+51 980 588 656</a>
+                    </p>
+                </div>
+
+            </div>
+
+            {{-- Footer --}}
+            <div class="flex items-center justify-between gap-3 px-6 py-4 border-t border-white/10 shrink-0">
+                <!-- <a href="{{ route('terminos') }}" target="_blank"
+                   class="flex items-center gap-1 text-xs text-slate-400 hover:text-cyan-300 transition">
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    Ver página completa
+                </a> -->
+                <button id="terms-accept"
+                        class="rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-[0_0_15px_rgba(249,116,21,0.3)] transition hover:bg-orange-500">
+                    Entendido, acepto
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        const modal    = document.getElementById('terms-modal');
+        const backdrop = document.getElementById('terms-backdrop');
+        const btnClose = document.getElementById('terms-close');
+        const btnAccept= document.getElementById('terms-accept');
+        const link     = document.getElementById('terms-link');
+        const checkbox = document.getElementById('terms');
+
+        function openModal(e) {
+            if (e) e.preventDefault();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        if (link)     link.addEventListener('click', openModal);
+        if (backdrop) backdrop.addEventListener('click', closeModal);
+        if (btnClose) btnClose.addEventListener('click', closeModal);
+        if (btnAccept) {
+            btnAccept.addEventListener('click', () => {
+                if (checkbox) checkbox.checked = true;
+                closeModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        });
+    })();
+    </script>
 
     {{-- JS compilado por Vite: reside en resources/js/ y nunca se expone directamente --}}
     @vite('resources/js/register.js')

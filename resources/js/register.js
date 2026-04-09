@@ -224,10 +224,10 @@ function initFileUploadFeedback() {
 // ── Cálculo dinámico de event_category_id (basado en birthdate) ──────────────
 
 /**
- * Reglas de categoría según edad en la fecha del evento (27/03/2026):
- *  < 12 años  → inscripción bloqueada
- *  12–19 años → category id=1 (Junior)
- *  ≥ 20 años  → category id=2 (Open / Senior)
+ * Busca la categoría cuyo rango min_age–max_age contiene la edad calculada
+ * a partir del birthdate. Los rangos provienen del JSON embebido por Blade.
+ *
+ * Ejemplo: birthdate 24/04/1989 → edad 36 → min_age=30, max_age=39 → id=4
  */
 function initCategoryFromBirthdate() {
     const birthdateInput = document.getElementById('birth-date');
@@ -235,6 +235,9 @@ function initCategoryFromBirthdate() {
     const ageAlert       = document.getElementById('alert-age-restriction');
 
     if (!birthdateInput || !categoryInput) return;
+
+    const data       = parseEventData();
+    const categories = data?.categories ?? [];
 
     birthdateInput.addEventListener('change', () => updateCategory());
 
@@ -248,10 +251,13 @@ function initCategoryFromBirthdate() {
         if (age < 12) {
             categoryInput.value = '';
             ageAlert?.classList.remove('hidden');
-        } else {
-            ageAlert?.classList.add('hidden');
-            categoryInput.value = age <= 19 ? '1' : '2';
+            return;
         }
+
+        ageAlert?.classList.add('hidden');
+
+        const match = categories.find(c => age >= c.min_age && age <= c.max_age);
+        categoryInput.value = match ? match.id : '';
     }
 }
 

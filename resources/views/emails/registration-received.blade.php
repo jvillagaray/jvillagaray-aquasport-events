@@ -284,6 +284,23 @@
                 <div class="item-label">Talla camiseta</div>
                 <div class="item-value">{{ $registration->shirtSize->label ?? '—' }}</div>
             </div>
+            <div class="data-item">
+                <div class="item-label">Club</div>
+                <div class="item-value">{{ $registration->participant->club->name ?? 'Independiente' }}</div>
+            </div>
+            <div class="data-item">
+                <div class="item-label">Categoría</div>
+                <div class="item-value">
+                    @if($registration->category)
+                        {{ $registration->category->name }}
+                        @if($registration->category->min_age && $registration->category->max_age)
+                            {{ $registration->category->min_age }}-{{ $registration->category->max_age }}
+                        @endif
+                    @else
+                        —
+                    @endif
+                </div>
+            </div>
         </div>
 
         {{-- Pasos --}}

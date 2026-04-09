@@ -12,6 +12,8 @@ Route::get('/descargar-reglamento', function () {
 
 
 // La vista recibe los clubes desde el servidor: cero AJAX, cero datos en el DOM
+Route::get('/terminos', fn () => view('web.terminos'))->name('terminos');
+
 Route::get('/inscripcion', [RegistroController::class, 'showForm'])->name('registro.create');
 Route::post('/inscripcion', [RegistroController::class, 'store'])->name('registro.store');
 Route::get('/inscripcion/confirmacion', [RegistroController::class, 'confirmacion'])->name('registro.confirmacion');
