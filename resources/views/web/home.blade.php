@@ -623,7 +623,7 @@
                         <div>
                             <p class="text-sm  text-text-dim">Yape/Plin</p>
                             <p class="text-sm  text-text-dim">Edith Hellen Vadillo Dionicio</p>
-                            <p class="text-sm font-bold tracking-widest text-white">980 579 173</p> 
+                            <p class="text-sm font-bold tracking-widest text-white">940 246 317</p> 
                             
                         </div>
                     </div>
