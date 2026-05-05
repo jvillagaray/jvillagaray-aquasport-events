@@ -91,8 +91,9 @@
                 <ul>
                     <li>El participante debe tener un mínimo de <strong>12 años cumplidos</strong> al momento del evento.</li>
                     <li>Los participantes <strong>menores de 18 años</strong> deben contar con autorización escrita de su padre, madre o tutor legal, la cual deberá ser presentada el día del evento.</li>
-                    <li>El participante declara encontrarse en condiciones físicas aptas para competir en la disciplina y distancia seleccionada.</li>
-                    <li>Es responsabilidad exclusiva del participante contar con aptitud médica suficiente. Se recomienda la presentación de un certificado médico vigente.</li>
+                    <li>El participante declara encontrarse en condiciones físicas y mentales aptas para competir en la disciplina y distancia seleccionada.</li>
+                    <li>Es responsabilidad única e intransferible del participante garantizar que cuenta con las condiciones de salud óptimas para la actividad a realizarse.</li>
+                    <li>Se recomienda la presentación de un certificado médico vigente.</li>
                 </ul>
 
                 <hr>

@@ -493,7 +493,7 @@
                 <div class="hidden md:block absolute top-[14px] left-[16%] right-[16%] h-0.5 bg-surface-border z-0">
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="relative flex flex-col items-center group">
+                    <div class="relative flex flex-col items-center group opacity-60  transition-opacity">
                         <div
                             class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-secondary border-4 border-background-dark z-10 mb-8 shadow-[0_0_15px_rgba(6,182,212,0.6)]">
                         </div>
@@ -521,8 +521,7 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="relative flex flex-col items-center group opacity-60  transition-opacity">
+                    <div class="relative flex flex-col items-center group ">
                         <div
                             class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-surface-border border-4 border-background-dark z-10 mb-8">
                         </div>
@@ -530,7 +529,7 @@
                             class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
                             <div
                                 class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                del 12 de abril al 2 de mayo
+                                del 12 de abril al 10 de mayo
                             </div>
                             <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 2</h4>
                             <div class="space-y-3">
@@ -549,8 +548,7 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="relative flex flex-col items-center group opacity-60  transition-opacity">
+                    <div class="relative flex flex-col items-center group opacity-60  transition-opacity">
                         <div
                             class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-surface-border border-4 border-background-dark z-10 mb-8">
                         </div>
@@ -558,7 +556,7 @@
                             class="w-full bg-background-dark border border-surface-border rounded-xl p-6 relative ">
                             <div
                                 class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-surface-border text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full whitespace-nowrap shadow-md">
-                                del 3 de mayo al 24 de mayo
+                                del 11 de mayo al 5 de junio
                             </div>
                             <h4 class="text-xl font-bold text-white text-center mt-3 mb-6">Fase 3</h4>
                             <div class="space-y-3">

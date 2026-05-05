@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::get('/descargar-reglamento', function () {
-    return response()->download(public_path('docs/reglamento.pdf'));
+    return response()->download(public_path('docs/BASES_IV_COPA_LAGUNA_DE_PACA_la_leyenda_2026_V2.pdf'));
 })->name('descargar.reglamento');
 
 
